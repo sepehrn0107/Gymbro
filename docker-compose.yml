@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: gymbro
+      POSTGRES_PASSWORD: gymbro
+      POSTGRES_DB: gymbro
+    ports:
+      - "5432:5432"
+    volumes:
+      - gymbro_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gymbro -d gymbro"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - gymbro_net
+
+volumes:
+  gymbro_pgdata:
+
+networks:
+  gymbro_net:
+    driver: bridge
