@@ -1,7 +1,7 @@
 # Progress
 
 ## Current Phase
-**Phase 0 complete** — Ready for Phase 1: Exercise Library
+**Phase 1 complete** — Ready for Phase 2: Active Workout
 
 ## Status
 - [x] Project brainstormed and scoped
@@ -10,7 +10,7 @@
 - [x] Implementation plan written (4 phases)
 - [x] Project scaffolded (CLAUDE.md + memory files)
 - [x] Phase 0: Scaffold & Infrastructure
-- [ ] Phase 1: Exercise Library
+- [x] Phase 1: Exercise Library
 - [ ] Phase 2: Active Workout
 - [ ] Phase 3: History & Progress
 - [ ] Phase 4: Polish & Production Readiness
@@ -28,13 +28,24 @@
 - Seed: 25 global exercises, full muscle group tree, exercise types, equipment
 - Tests: 81 tests passing (units, errors, validations, BottomNav, auth routes)
 
+## Phase 1 Delivered (2026-03-29)
+- API: GET/POST /api/exercises, GET /api/exercises/[id], GET /api/muscle-groups, GET /api/exercise-types, GET /api/equipment
+- Services: exercise.service.ts (list, getById, getBySlug, create with slug collision retry), lookup.service.ts
+- Lib: slug.ts (generateCustomSlug/generateGlobalSlug), validations/exercises.ts (createExerciseSchema, exerciseQuerySchema)
+- Domain types: MuscleGroup, ExerciseType, EquipmentItem, ExerciseListItem, ExerciseDetail
+- Pages: /exercises (server, search+filter+pagination), /exercises/[slug] (detail), /exercises/new (create form)
+- Components: ExerciseCard, ExerciseList, MuscleGroupFilter, ExerciseSearchBar, CreateExerciseForm, ExercisePageControls
+- Hook: useExercises.ts (client-side, ready for Phase 2)
+- ADR: .claude/memory/decisions/2026-03-29-exercise-slug-strategy.md
+- Tests: 137 new tests (service, validation, API routes, components)
+
 ## Next
-Run `/implement` to start Phase 1: Exercise Library
-- Exercise list page (browse global + custom exercises)
-- Exercise detail page
-- Create custom exercise flow (exercise type, equipment, muscle groups)
-- Exercise search + filter by muscle group
-- API: GET /exercises, POST /exercises, GET /exercises/[id]
+Run `/implement` to start Phase 2: Active Workout
+- Start / finish a workout session
+- Add exercises to active workout
+- Log sets with last-session pre-fill hint (reps, weight, duration, restTime, RPE)
+- Concurrent session enforcement (ConflictError)
+- API: POST /workouts, PATCH /workouts/[id], POST /workouts/[id]/exercises, POST /workouts/[id]/exercises/[exId]/sets
 
 ## Open Decisions (resolved)
 - Bodyweight exercises: `weight = null`, treated as reps-only
