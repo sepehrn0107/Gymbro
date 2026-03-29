@@ -37,5 +37,3 @@ Thumbs.db
 # Drizzle (generated migrations are committed; only ignore the generated SQL diff artifacts)
 # drizzle/ — keep migrations committed
 
-# Docker
-.dockerignore
