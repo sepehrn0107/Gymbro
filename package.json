@@ -1,0 +1,49 @@
+{
+  "name": "gymbro",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:seed": "tsx src/db/seed/index.ts",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@auth/drizzle-adapter": "^1",
+    "bcryptjs": "^2",
+    "dotenv": "^17.3.1",
+    "drizzle-orm": "^0.40.0",
+    "lucide-react": "^0.400.0",
+    "next": "15.x",
+    "next-auth": "^5.0.0-beta.25",
+    "nodemailer": "^7",
+    "pg": "^8",
+    "react": "19.x",
+    "react-dom": "19.x",
+    "tailwindcss": "^3",
+    "typescript": "^5",
+    "zod": "^3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2",
+    "@types/node": "^20",
+    "@types/pg": "^8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^4.1.2",
+    "autoprefixer": "^10.4.27",
+    "drizzle-kit": "^0.30.0",
+    "eslint-config-prettier": "^9",
+    "prettier": "^3",
+    "prettier-plugin-tailwindcss": "^0.6",
+    "tsx": "^4.21.0",
+    "vitest": "^4.1.2"
+  }
+}
