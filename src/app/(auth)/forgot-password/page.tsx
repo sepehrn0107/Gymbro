@@ -28,7 +28,7 @@ export default function ForgotPasswordPage() {
         const body = await res.json().catch(() => ({}))
         setState({
           status: "error",
-          message: (body as { error?: string }).error ?? "Something went wrong. Please try again.",
+          message: (body as { error?: { message?: string } }).error?.message ?? "Something went wrong. Please try again.",
         })
         return
       }

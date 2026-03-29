@@ -30,7 +30,7 @@ export default function RegisterPage() {
         const body = await res.json().catch(() => ({}))
         setState({
           status: "error",
-          message: (body as { error?: string }).error ?? "Registration failed. Please try again.",
+          message: (body as { error?: { message?: string } }).error?.message ?? "Registration failed. Please try again.",
         })
         return
       }
