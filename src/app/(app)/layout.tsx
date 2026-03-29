@@ -15,7 +15,7 @@ export default async function AppLayout({
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
-      <main className="flex-1 pb-[calc(56px+env(safe-area-inset-bottom))]">
+      <main className="flex-1 pb-[calc(80px+env(safe-area-inset-bottom))]">
         {children}
       </main>
       <BottomNav />

@@ -14,7 +14,7 @@ import { eq } from "drizzle-orm"
 import { z } from "zod"
 
 import { db } from "@/db"
-import { users } from "@/db/schema"
+import { users, accounts, sessions, verificationTokens } from "@/db/schema"
 
 const credentialsSchema = z.object({
   email: z.string().email(),
@@ -22,7 +22,12 @@ const credentialsSchema = z.object({
 })
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(db, {
+    usersTable: users,
+    accountsTable: accounts,
+    sessionsTable: sessions,
+    verificationTokensTable: verificationTokens,
+  }),
   providers: [
     Google,
     Credentials({
