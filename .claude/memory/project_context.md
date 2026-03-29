@@ -1,7 +1,7 @@
 # Project Context
 
 ## What
-Repd — a mobile-first gym workout tracker web app. Multi-user, cloud-hosted.
+GymBro — a mobile-first gym workout tracker web app. Multi-user, cloud-hosted.
 
 ## Core Purpose
 Let users log workouts (exercises + sets + reps + weight) in real time during a gym session, and review their progress over time.

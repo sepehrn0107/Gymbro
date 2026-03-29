@@ -1,4 +1,4 @@
-# Repd
+# GymBro
 
 Mobile-first gym workout tracker — log exercises, sets, reps, and weight during workouts.
 

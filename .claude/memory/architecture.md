@@ -3,7 +3,7 @@
 ## Directory Structure
 
 ```
-repd/
+gymbro/
 ├── src/
 │   ├── app/                          ← Next.js App Router
 │   │   ├── (auth)/                   ← login, register (unauthenticated)
