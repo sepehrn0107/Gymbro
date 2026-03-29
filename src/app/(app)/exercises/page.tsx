@@ -82,12 +82,17 @@ export default async function ExercisesPage({ searchParams }: PageProps) {
     <div className="px-4 py-6">
       {/* Page header */}
       <header className="mb-6 flex items-center justify-between">
-        <h1 className="font-heading text-3xl font-bold text-text-primary">
-          Exercises
-        </h1>
+        <div>
+          <p className="font-label text-[10px] font-bold uppercase tracking-[0.25em] text-outline">
+            Library
+          </p>
+          <h1 className="mt-1 font-heading text-4xl font-black leading-none tracking-tight text-text-primary">
+            Exercises
+          </h1>
+        </div>
         <Link
           href="/exercises/new"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-xl font-bold text-accent-foreground shadow transition-opacity active:opacity-80"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-xl font-black text-primary-foreground shadow-ambient transition-opacity active:opacity-80"
           aria-label="Create new exercise"
         >
           +
@@ -133,29 +138,29 @@ export default async function ExercisesPage({ searchParams }: PageProps) {
           {hasPrev ? (
             <Link
               href={buildUrl({ page: String(page - 1) })}
-              className="flex min-h-[44px] items-center rounded-lg bg-surface-raised px-4 py-2 text-sm font-medium text-text-primary transition-opacity active:opacity-70"
+              className="flex min-h-[44px] items-center rounded-xl bg-surface-raised px-5 py-2 font-label text-xs font-bold uppercase tracking-widest text-text-primary transition-opacity active:opacity-70"
             >
               Previous
             </Link>
           ) : (
-            <span className="flex min-h-[44px] items-center rounded-lg bg-surface px-4 py-2 text-sm font-medium text-text-secondary opacity-50">
+            <span className="flex min-h-[44px] items-center rounded-xl bg-surface px-5 py-2 font-label text-xs font-bold uppercase tracking-widest text-text-secondary opacity-40">
               Previous
             </span>
           )}
 
-          <span className="text-xs text-text-secondary">
-            Page {page} of {totalPages}
+          <span className="font-label text-[10px] uppercase tracking-widest text-outline">
+            {page} / {totalPages}
           </span>
 
           {hasNext ? (
             <Link
               href={buildUrl({ page: String(page + 1) })}
-              className="flex min-h-[44px] items-center rounded-lg bg-surface-raised px-4 py-2 text-sm font-medium text-text-primary transition-opacity active:opacity-70"
+              className="flex min-h-[44px] items-center rounded-xl bg-surface-raised px-5 py-2 font-label text-xs font-bold uppercase tracking-widest text-text-primary transition-opacity active:opacity-70"
             >
               Next
             </Link>
           ) : (
-            <span className="flex min-h-[44px] items-center rounded-lg bg-surface px-4 py-2 text-sm font-medium text-text-secondary opacity-50">
+            <span className="flex min-h-[44px] items-center rounded-xl bg-surface px-5 py-2 font-label text-xs font-bold uppercase tracking-widest text-text-secondary opacity-40">
               Next
             </span>
           )}

@@ -1,22 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;900&family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-bg: #0a0a0a;
-  --color-surface: #111111;
-  --color-surface-raised: #1c1c1c;
-  --color-primary: #2563eb;
-  --color-primary-fg: #f8fafc;
-  --color-accent: #f97316;
-  --color-accent-fg: #f8fafc;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
-  --color-border: #1c1c1c;
-  --font-heading: 'Barlow Condensed', sans-serif;
-  --font-body: 'Barlow', sans-serif;
+  /* Surface hierarchy */
+  --color-bg: #111416;
+  --color-surface: #1d2022;
+  --color-surface-raised: #272a2c;
+  --color-surface-high: #323537;
+  --color-surface-low: #191c1e;
+  --color-surface-bright: #37393c;
+
+  /* Primary — light mint (Stitch "Tactical Precision") */
+  --color-primary: #d7fff3;
+  --color-primary-fg: #00382f;
+  --color-primary-container: #00f5d4;
+  --color-primary-dim: #00dfc1;
+
+  /* Accent — green tertiary */
+  --color-accent: #63f3ad;
+  --color-accent-fg: #003822;
+
+  /* Text */
+  --color-text-primary: #e1e2e5;
+  --color-text-secondary: #b9cac4;
+
+  /* Borders */
+  --color-border: #3a4a46;
+  --color-outline: #83948f;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Inter', sans-serif;
+
+  /* Kinetic gradient (primary CTA) */
+  --gradient-kinetic: linear-gradient(135deg, #d7fff3 0%, #00dfc1 100%);
 }
 
 @layer base {
@@ -69,21 +90,53 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #2a2a2a;
+    background: #3a4a46;
   }
 
-  /* Firefox */
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--color-surface-raised) var(--color-bg);
   }
 
-  /* Ensure inputs don't get browser autofill yellow */
+  /* Prevent browser autofill yellow */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
     -webkit-text-fill-color: var(--color-text-primary);
     -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset;
     transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@layer utilities {
+  .kinetic-gradient {
+    background: var(--gradient-kinetic);
+  }
+
+  /* Glass panel — floating elements (BottomNav, modals) */
+  .glass-panel {
+    background: rgba(55, 57, 60, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Metric glow — large display numbers */
+  .metric-glow {
+    text-shadow: 0 0 20px rgba(215, 255, 243, 0.3);
+  }
+
+  /* Tactical dot-grid background texture */
+  .tactical-grid {
+    background-image: radial-gradient(circle at 1px 1px, #1d2022 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
