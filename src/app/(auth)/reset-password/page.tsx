@@ -33,7 +33,7 @@ export default function ResetPasswordPage() {
         const body = await res.json().catch(() => ({}))
         setState({
           status: "error",
-          message: (body as { error?: string }).error ?? "Invalid or expired code.",
+          message: (body as { error?: { message?: string } }).error?.message ?? "Invalid or expired code.",
         })
         return
       }
