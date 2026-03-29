@@ -64,13 +64,15 @@ gymbro/
 **Route Handler → Service → DB** (strict — no DB access in handlers, no HTTP in services)
 
 **Data Model:**
-- `users` — Auth.js managed + `unitPreference`, `displayName`
-- `muscle_groups`, `exercise_types`, `equipment` — lookup tables, seeded
+- `users` — Auth.js managed + `unitPreference`, `displayName`, `age`, `bodyWeight`, `height`
+- `muscle_groups` — hierarchical (self-referencing parent/children, e.g. Upper Body → Arms → Biceps), seeded
+- `exercise_types` — bodyweight | weight | resistance | cardio, seeded
+- `equipment` — lookup table, seeded
 - `exercises` — global (`is_global=true`) or user-created custom
 - `exercise_secondary_muscles` — junction table for many-to-many
-- `workouts` — session with `status: in_progress|completed|discarded`
-- `workout_exercises` — ordered bridge between workout and exercise
-- `sets` — reps + weight (kg) + set_type per workout_exercise
+- `workouts` — session with `status: in_progress|completed|discarded`, `notes`, `totalDuration`
+- `workout_exercises` — ordered bridge between workout and exercise + `notes` per exercise
+- `sets` — reps + weight (kg) + set_type + `duration` (cardio) + `restTime` (seconds) + `rpe` (1–10)
 
 ## API Response Envelope
 ```ts
