@@ -39,6 +39,11 @@
 - ADR: .claude/memory/decisions/2026-03-29-exercise-slug-strategy.md
 - Tests: 137 new tests (service, validation, API routes, components)
 
+## Retrospective (2026-03-29)
+- Ran retro on Playwright setup
+- toolbox PR #24: new `/add-e2e-playwright` skill + Next.js `testing.md` standard
+- Global memory: `playwright_cli_pattern.md`
+
 ## Next
 Run `/implement` to start Phase 2: Active Workout
 - Start / finish a workout session
