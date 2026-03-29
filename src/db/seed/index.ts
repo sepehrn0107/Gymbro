@@ -15,6 +15,7 @@ import { seedExerciseTypes } from './exercise-types'
 import { seedEquipment } from './equipment'
 import { seedMuscleGroups } from './muscle-groups'
 import { seedExercises } from './exercises'
+import { seedTestUsers } from './test-users'
 
 async function main() {
   const databaseUrl = process.env.DATABASE_URL
@@ -41,6 +42,10 @@ async function main() {
     console.log('Seeding exercises...')
     await seedExercises(db)
     console.log('  Exercises seeded.')
+
+    console.log('Seeding test users...')
+    await seedTestUsers(db)
+    console.log('  Test users seeded.')
 
     console.log('Seed complete.')
   } catch (err) {
