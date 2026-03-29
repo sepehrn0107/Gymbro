@@ -42,7 +42,7 @@ export function MuscleGroupFilter({
     <select
       value={value ?? ""}
       onChange={handleChange}
-      className="w-full rounded-lg bg-surface-raised px-3 py-2 text-sm text-text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+      className="w-full rounded-xl bg-surface-raised px-4 py-3 font-label text-xs font-bold uppercase tracking-widest text-text-primary focus:outline-none focus:ring-1 focus:ring-primary/40 transition-all"
       aria-label="Filter by muscle group"
     >
       <option value="">All muscle groups</option>

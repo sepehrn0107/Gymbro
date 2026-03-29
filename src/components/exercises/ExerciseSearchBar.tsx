@@ -44,7 +44,7 @@ export function ExerciseSearchBar({
       value={inputValue}
       onChange={(e) => setInputValue(e.target.value)}
       placeholder={placeholder}
-      className="w-full rounded-lg bg-surface-raised px-4 py-2.5 text-sm text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+      className="w-full rounded-xl bg-surface-raised px-4 py-3 font-body text-sm text-text-primary placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary/40 transition-all"
       aria-label={placeholder}
     />
   )

@@ -33,9 +33,12 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-surface pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-0 left-0 right-0 z-50 flex justify-center px-4 pb-[calc(1rem+env(safe-area-inset-bottom))]"
     >
-      <ul className="flex items-stretch" role="list">
+      <ul
+        className="glass-panel flex w-full max-w-sm items-stretch rounded-3xl shadow-ambient"
+        role="list"
+      >
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href || pathname.startsWith(href + "/")
 
@@ -44,10 +47,8 @@ export function BottomNav() {
               <Link
                 href={href}
                 className={[
-                  "flex min-h-[56px] flex-1 flex-col items-center justify-center gap-1 px-1 text-xs font-medium transition-colors",
-                  isActive
-                    ? "text-primary"
-                    : "text-text-secondary",
+                  "flex min-h-[60px] flex-1 flex-col items-center justify-center gap-1 px-1 font-label text-[10px] font-bold uppercase tracking-widest transition-colors",
+                  isActive ? "text-primary" : "text-text-secondary",
                 ].join(" ")}
                 aria-current={isActive ? "page" : undefined}
               >
@@ -57,6 +58,9 @@ export function BottomNav() {
                   aria-hidden="true"
                 />
                 <span>{label}</span>
+                {isActive && (
+                  <span className="h-1 w-4 rounded-full bg-primary" />
+                )}
               </Link>
             </li>
           )
