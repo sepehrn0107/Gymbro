@@ -15,12 +15,12 @@ Standards:
 
 Read these before starting any task:
 
-- `.claude/memory/project_context.md` — project goals, stakeholders, constraints
-- `.claude/memory/stack.md` — stack choice and rationale
-- `.claude/memory/architecture.md` — structure and key components
-- `.claude/memory/progress.md` — current phase, done, next
-- `.claude/memory/lessons.md` — what's working, what isn't
-- `.claude/memory/decisions/` — architectural decision records
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/project_context.md` — project goals, stakeholders, constraints
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/stack.md` — stack choice and rationale
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/architecture.md` — structure and key components
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/progress.md` — current phase, done, next
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/lessons.md` — what's working, what isn't
+- `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/decisions/` — architectural decision records
 
 ## Standards
 
@@ -57,7 +57,7 @@ Run `/index-repo` to build or refresh. Re-run after major refactors.
 
 - Read project memory before starting any task
 - Follow active stack standards throughout
-- Write session summary to `.claude/memory/progress.md` when stopping
+- Write session summary to `C:/Users/sepeh/Documents/workspace/vault/02-projects/gymbro/memory/progress.md` when stopping
 - Run `/standards-check` before opening any PR
 - Weight is always stored in kg server-side; convert on display only
 - All API routes must call `requireSession()` before any DB access
